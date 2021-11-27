@@ -1,8 +1,10 @@
- #!/usr/bin/python3
- """
- This function returns a list
- with a pascal triangle list
- """
+#!/usr/bin/python3
+"""
+    This function returns a list
+    with a pascal triangle list
+    """
+
+
 def pascal_triangle(n: int):
     ''' returns a list of pascal triangle '''
     pascal = []
