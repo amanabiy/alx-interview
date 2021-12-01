@@ -5,6 +5,7 @@ The first box is open
 and every box has a key to another box
 """
 
+
 def openBoxes(unopenedBoxes, openedBoxes, boxes):
     """
     use all the keys as much as you can using set
