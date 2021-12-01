@@ -5,10 +5,9 @@ The first box is open
 and every box has a key to another box
 """
 
-
 def openBoxes(unopenedBoxes, openedBoxes, boxes):
     """
-    use all the keys to open the boxes as much as you can
+    use all the keys as much as you can using set
     """
     if len(unopenedBoxes) == 0:
         if len(openedBoxes) == len(boxes):
@@ -25,6 +24,7 @@ def openBoxes(unopenedBoxes, openedBoxes, boxes):
 
 
 def canUnlockAll(boxes):
+    """ using set """
     openedBoxes = set()
     unopenedBoxes = set()
     unopenedBoxes.add(0)
