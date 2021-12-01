@@ -5,6 +5,7 @@ The first box is open
 and every box has a key to another box
 """
 
+
 def canUnlockAll(boxes):
     """ find every key to open all """
     size = len(boxes)
