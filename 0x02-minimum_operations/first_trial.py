@@ -15,7 +15,6 @@ def minOperations(n):
     letter = 1
     copy = 1
     op = 1
-    nim = 100000000000000
     factors = []
 
     # find all the dividors
