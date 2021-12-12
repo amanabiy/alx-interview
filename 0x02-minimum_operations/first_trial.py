@@ -19,45 +19,29 @@ def minOperations(n) -> int:
     nim: int = 100000000000000
     factors: List[int] = []
 
-
+    # find all the dividors
     for factor in range(2, (n // 2) + 1):
         if n % factor == 0:
             factors.append(factor)
-    # print (factors)
-    for num in factors:
-        # print(num)
-        if (num < nim):
-            nim = num
-    # print(nim)
 
+    nim = min(factors)  #find the min divider to use latter
+
+    #count the operation
     while letter <= n:
         if letter == n:
             return op
-        # paste until reaching the nim
+        # paste until reaching the least factor
         if letter < nim:
             op += 1
             letter += copy
-            # if (n % (copy + letter) == 0 and copy != 1 and copy != 0):
-            # print(f"{copy + letter} akafay copy: {copy} letter: {letter}")
-            #     op += 1
-            #     letter += copy
-            # else:
-            #     print(f"no akafay copy: {copy} letter: {letter}")
-            #     op += 1
-            #     copy += letter
         # paste
         if letter in factors:
-
             op += 1
             copy = letter
             op += 1
             letter += copy
             # print(f"copy-paste:  paste letter: {letter} copy: {copy}")
-
         else:
-            # print(f"paste letter: {letter} copy: {copy}")
-            # op += 1
-            # copy = letter
             op += 1
             letter += copy
     return 0
