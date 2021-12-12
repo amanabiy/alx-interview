@@ -19,7 +19,7 @@ def minOperations(n) -> int:
     if n == 0 or n == 1:
         return 0
 
-    for factor in range(2, n):
+    for factor in range(2, (n // 2) + 1):
         if n % factor == 0:
             factors.append(factor)
     # print (factors)
