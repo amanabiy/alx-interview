@@ -11,13 +11,14 @@ from typing import List
 
 def minOperations(n) -> int:
     """ find the min operations needed to achive the required H number """
+    if n < 2 or type(n) is not int:
+        return 0
     letter: int = 1
     copy: int = 1
     op: int = 1
     nim: int = 100000000000000
     factors: List[int] = []
-    if n < 2 or type(n) is not int:
-        return 0
+
 
     for factor in range(2, (n // 2) + 1):
         if n % factor == 0:
