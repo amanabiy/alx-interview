@@ -1,25 +1,24 @@
 #!/usr/bin/env python3
 """
-In a text file, there is a single character H. Your text editor can execute only two operations in this file: 
-Copy All and Paste. Given a number n, write a method that calculates the fewest number of operations needed to 
+In a text file, there is a single character H.
+Your text editor can execute only two operations in this file:
+Copy All and Paste. Given a number n, write a method
+that calculates the fewest number of operations needed to
 result in exactly n H characters in the file.
 """
-# from typing import List
+from typing import List
 
-
-# def greatesFactor(n) -> List[int]:
-#     """ return the Greatest factor of the number """
-
-#     return factors
-        
 
 def minOperations(n) -> int:
     """ find the min operations needed to achive the required H number """
     letter: int = 1
     copy: int = 1
     op: int = 1
-    nim: int = 1000000000000
-    factors = []
+    nim: int = 100000000000000
+    factors: List[int] = []
+    if n == 0 or n == 1:
+        return 0
+
     for factor in range(2, n):
         if n % factor == 0:
             factors.append(factor)
@@ -33,7 +32,7 @@ def minOperations(n) -> int:
     while letter <= n:
         if letter == n:
             return op
-        #paste until reaching the nim
+        # paste until reaching the nim
         if letter < nim:
             op += 1
             letter += copy
@@ -45,19 +44,19 @@ def minOperations(n) -> int:
             #     print(f"no akafay copy: {copy} letter: {letter}")
             #     op += 1
             #     copy += letter
-        #paste
+        # paste
         if letter in factors:
-            
+
             op += 1
             copy = letter
             op += 1
             letter += copy
             # print(f"copy-paste:  paste letter: {letter} copy: {copy}")
-            
+
         else:
             # print(f"paste letter: {letter} copy: {copy}")
             # op += 1
             # copy = letter
-            op+=1
-            letter += copy     
+            op += 1
+            letter += copy
     return 0
