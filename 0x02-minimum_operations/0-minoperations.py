@@ -16,7 +16,7 @@ def minOperations(n) -> int:
     op: int = 1
     nim: int = 100000000000000
     factors: List[int] = []
-    if n == 0 or n == 1:
+    if n < 2 or type(n) is not int:
         return 0
 
     for factor in range(2, (n // 2) + 1):
