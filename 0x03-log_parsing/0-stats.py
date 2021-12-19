@@ -22,7 +22,7 @@ file = 0
 
 def print_log():
     """Prints the logs"""
-    print("File file: {}".format(file))
+    print("File size: {}".format(file))
     for stat in sorted(status_codes.keys()):
         if status_codes[stat]:
             print("{}: {}".format(stat, status_codes[stat]))
