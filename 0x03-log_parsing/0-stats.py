@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module that parses a log and prints stats to stdout
+Module that parses a log and prints status
 """
 from sys import stdin
 
@@ -19,7 +19,7 @@ size = 0
 
 
 def print_log():
-    """Prints the accumulated logs"""
+    """Prints the logs"""
     print("File size: {}".format(size))
     for status in sorted(status_codes.keys()):
         if status_codes[status]:
@@ -31,10 +31,10 @@ if __name__ == "__main__":
     try:
         for line in stdin:
             try:
-                items = line.split()
-                size += int(items[-1])
-                if items[-2] in status_codes:
-                    status_codes[items[-2]] += 1
+                log = line.split()
+                size += int(log[-1])
+                if log[-2] in status_codes:
+                    status_codes[log[-2]] += 1
             except Exception:
                 pass
             if count == 9:
