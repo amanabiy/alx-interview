@@ -43,5 +43,6 @@ if __name__ == "__main__":
             count += 1
     except KeyboardInterrupt:
         print_log()
+        # print_log()
         raise
     print_log()
