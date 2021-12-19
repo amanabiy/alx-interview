@@ -34,9 +34,9 @@ if __name__ == "__main__":
         for line in stdin:
             try:
                 log = line.split()
-                file += int(log[-1])
                 if log[-2] in status_codes:
                     status_codes[log[-2]] += 1
+                file += int(log[-1])
             except Exception:
                 pass
             if count % 10 == 0:
