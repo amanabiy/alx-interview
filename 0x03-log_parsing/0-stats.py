@@ -21,9 +21,9 @@ file = 0
 def print_log():
     """Prints the logs"""
     print("File file: {}".format(file))
-    for status in sorted(status_codes.keys()):
-        if status_codes[status]:
-            print("{}: {}".format(status, status_codes[status]))
+    for stat in sorted(status_codes.keys()):
+        if status_codes[stat]:
+            print("{}: {}".format(stat, status_codes[stat]))
 
 
 if __name__ == "__main__":
