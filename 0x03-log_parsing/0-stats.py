@@ -15,34 +15,32 @@ status_codes = {
     "500": 0
 }
 
-size = 0
+file = 0
 
 
 def print_log():
     """Prints the logs"""
-    print("File size: {}".format(size))
+    print("File file: {}".format(file))
     for status in sorted(status_codes.keys()):
         if status_codes[status]:
             print("{}: {}".format(status, status_codes[status]))
 
 
 if __name__ == "__main__":
-    count = 0
+    count = 1
     try:
         for line in stdin:
             try:
                 log = line.split()
-                size += int(log[-1])
+                file += int(log[-1])
                 if log[-2] in status_codes:
                     status_codes[log[-2]] += 1
             except Exception:
                 pass
-            if count == 9:
+            if count % 10 == 0:
                 print_log()
-                count = -1
             count += 1
     except KeyboardInterrupt:
         print_log()
-        # print_log()
         raise
     print_log()
