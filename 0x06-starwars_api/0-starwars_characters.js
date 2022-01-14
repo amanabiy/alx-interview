@@ -1,22 +1,16 @@
 #!/usr/bin/node
 const request = require('request');
 request('https://swapi-api.hbtn.io/api/films/' + process.argv[2],
-  function (error, response, body) {
-    if (error !== null) {
-      const characters = JSON.parse(response.body).characters;
-      characters.forEach(element => {
-        request(element, function (error, res, body) {
-          if (error !== null) {
-            const nameChar = JSON.parse(res.body).name;
-            console.log(nameChar);
-          }
-          else {
-              console.log("name not fetched")
-          }
+  async function (err, res, body) {
+    if (err) return console.error(err);
+    const charURLList = JSON.parse(body).characters;
+    for (const charURL of charURLList) {
+      await new Promise(function (resolve, reject) {
+        request(charURL, function (err, res, body) {
+          if (err) return console.error(err);
+          console.log(JSON.parse(body).name);
+          resolve();
         });
       });
-    }
-    else {
-        console.log("not here")
     }
   });
